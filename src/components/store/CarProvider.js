@@ -4,7 +4,7 @@ import CartContext from "./Cart-Context";
 
 const getLocalStorageData = () => {
   let newCarData = localStorage.getItem("cart");
-  if (newCarData === []) {
+  if (newCarData === null) {
     return [];
   } else {
     return JSON.parse(newCarData);
@@ -13,7 +13,7 @@ const getLocalStorageData = () => {
 
 const getLocalStorageTotal = () => {
   let newCarTotal = +localStorage.getItem("total");
-  if (newCarTotal === 0) {
+  if (newCarTotal === null) {
     return 0;
   } else {
     return +JSON.parse(newCarTotal);
